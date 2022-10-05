@@ -49,7 +49,7 @@ def Login(request):
         username = request.POST['username']
         password = request.POST['password']
         # user = authenticate(request, username = username, password = password)
-        str = 'N0tSo3a5Y'
+        str = 'N0tSoE#5Y'
         if(username != 'admin'):
             messages.info(request, f'Username is not admin')
             return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'Login'})
