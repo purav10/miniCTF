@@ -33,7 +33,7 @@ def register(request):
             msg.attach_alternative(html_content, "text/html")
             msg.send()
             ##################################################################
-            messages.success(request, f'Your account has been created ! You are now able to log in')
+            messages.success(request, f'Your account has been created ! You are now able to Login')
             return redirect('login')
     else:
         form = UserRegisterForm()
@@ -52,23 +52,23 @@ def Login(request):
         str = 'N0tSo3a5Y'
         if(username != 'admin'):
             messages.info(request, f'Username is not admin')
-            return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'log in'})
+            return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'Login'})
         elif(len(password) != 9):
             messages.info(request, f'Length of password is not 9')
-            return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'log in'})
+            return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'Login'})
         elif(password != str):
             for i in range(9):
                 if(str[i] != password[i]):
                     messages.info(request, f'Password at {i} index is incorrect')
-                    return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'log in'})
+                    return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'Login'})
 
 
 
         else :
             # form = login(request, user)
             messages.success(request, f"flag{{L3aky_Err0r_M355age5}}")
-            return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'log in'})
+            return render(request, 'user/login.html', {'form':AuthenticationForm(), 'title':'Login'})
     #     else:
     #         messages.info(request, f'account done not exit plz sign in')
     form = AuthenticationForm()
-    return render(request, 'user/login.html', {'form':form, 'title':'log in'})
+    return render(request, 'user/login.html', {'form':form, 'title':'Login'})
