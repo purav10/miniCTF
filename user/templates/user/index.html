@@ -63,19 +63,6 @@
           </button>
           <a class="navbar-brand" class="styleheader" href="{% url "login" %}">MINICTF</a>
         </div>
-        <div class="collapse navbar-collapse" id="mainNavBar">
-          <ul class="nav navbar-nav navbar-right">
-            <!-- <li><a href="{% url "index" %}">Home</a></li> -->
-
-            <!-- {% if user.is_authenticated %} -->
-            <!-- <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> &nbsp; Logout</a></li> -->
-            <!-- {% else %} -->
-            <!-- <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Sign up</a></li> -->
-            <!-- <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> &nbsp; Log in</a></li> -->
-            <!-- {% endif %} -->
-
-          </ul>
-        </div>
       </div>
     </nav>
   </header>
@@ -87,7 +74,8 @@
     {% if user.is_authenticated %}
     <center><h1>welcome back {{user.username}}!</h1></center>
     {% else %}
-    <center><h1>Go to /login</h1></center>
+    <span style="font-size: 3.2rem; margin: 5%; border-radius:1%; padding:5%; font-weight: normal;"><center><a href="{% url "login" %}">Login</a></center></span>
+    
     {% endif %}
     {% endblock %}
   </div>
