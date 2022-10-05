@@ -1,0 +1,1 @@
+web: gunicorn purav.wsgi --log-file -

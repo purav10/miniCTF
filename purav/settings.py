@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1','ctf-login.herokuapp.com/']
 INSTALLED_APPS = [
     # 'user.app.UserConfig',
     'crispy_forms',
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,3 +127,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+WHITENOISE_USE_FINDERS = True
+
