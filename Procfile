@@ -1,1 +1,1 @@
-web: gunicorn purav.wsgi --log-file -
+web: gunicorn purav.wsgi 
